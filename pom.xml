@@ -50,7 +50,7 @@
     </dependencies>
 
     <build>
-        <finalName>java-ee-practice</finalName>
+        <finalName>psk-lend-a-thing</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
@@ -58,7 +58,7 @@
                     <artifactId>mybatis-generator-maven-plugin</artifactId>
                     <version>1.4.0</version>
                     <configuration>
-                        <contexts>LendingDB</contexts>
+                        <contexts>LendeeDB2</contexts>
                         <verbose>true</verbose>
                     </configuration>
                     <executions>

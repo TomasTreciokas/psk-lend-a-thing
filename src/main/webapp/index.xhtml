@@ -1,14 +1,42 @@
-<!DOCTYPE html>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
 >
-<h:head/>
-<h:body>
-    <h:form>
-        <h:inputText value="#{accountAuthorizations.accountAuthorizationToCreate.name}" required="true" />
-        <h:commandButton value="Add new accountAuthorization" action="#{accountAuthorizations.createAccountAuthorization}" />
-    </h:form>
-</h:body>
+<head>
+    <title>Lendees</title>
+</head>
+<body>
+<h1>Add a new lendee:</h1>
+<h:form>
+    <table cellpadding="1.5" border="1" >
+        <tr>
+            <td>Lendee email:</td>
+            <td>
+                <h:inputText id="email" value="#{lendeeList.lendee.email}"
+                             required="true"/>
+            </td>
+        </tr>
+
+    </table>
+    <p>
+        <h:commandButton value="Add" action="#{lendeeList.createLendee}"/>
+    </p>
+</h:form>
+<h1>Lendee list:</h1>
+<h:dataTable value="#{lendeeList.lendeeList}" var="lendee" cellpadding="1.5" border="1" style="text-align:center" width="150px">
+    <h:column>
+        <f:facet name="header"><b>Name</b></f:facet>
+        <h:link value="#{lendee.email}" outcome="Items?lendeeId=#{lendee.id}"/>
+    </h:column>
+    <h:column>
+        <f:facet name="header"><b>Edit</b></f:facet>
+        <h:link value="Edit" outcome="LendeeInfo?lendeeId=#{lendee.id}" />
+    </h:column>
+</h:dataTable>
+
+</body>
 </html>
