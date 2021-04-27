@@ -6,7 +6,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
 >
 <h:body>
-    <h1>#{lenderListMyBatis.item.name} Past Users(Lenders)</h1>
+    <h1>Lenders of #{lenderListMyBatis.item.name} item</h1>
     <h2>Add lender:</h2>
         <h:form>
             <table>
@@ -30,20 +30,14 @@
                 <h:commandButton value="Add" action="#{lenderListMyBatis.createLender}">
                 <f:param name="itemId" value="#{lenderListMyBatis.item.id}" />
                 </h:commandButton>
-
             </p>
         </h:form>
 
     <h2>All Created Lenders:</h2>
-
     <h:form>
         <ol>
             <ui:repeat value="#{lenderListMyBatis.allLenders}" var="lender1">
                 <li>#{lender1.surname}</li>
-                <h:commandButton value="Delete" action="#{lenderListMyBatis.deleteLender}">
-                    <f:param name="itemId" value="#{lenderListMyBatis.item.id}" />
-                    <f:param name="lenderId" value="#{lender1.id}" />
-                </h:commandButton>
             </ui:repeat>
         </ol>
     </h:form>

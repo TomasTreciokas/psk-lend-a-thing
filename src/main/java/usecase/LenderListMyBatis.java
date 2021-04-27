@@ -26,9 +26,6 @@ public class LenderListMyBatis {
     @Inject
     private LenderMapper lenderMapper;
 
-    @Inject
-    private ItemLenderMapper itemLenderMapper;
-
     @Getter
     @Setter
     private ItemLender itemLender = new ItemLender();;
