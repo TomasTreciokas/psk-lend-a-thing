@@ -8,7 +8,6 @@ import mybatis.dao.ItemLenderMapper;
 import mybatis.dao.LenderMapper;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -20,7 +19,6 @@ import mybatis.model.ItemLender;
 import repository.*;
 
 @Model
-@RequestScoped
 public class LenderListMyBatis {
 
     @Inject
@@ -28,7 +26,8 @@ public class LenderListMyBatis {
 
     @Getter
     @Setter
-    private ItemLender itemLender = new ItemLender();;
+    private ItemLender itemLender = new ItemLender();
+    ;
 
     @Getter
     @Setter
@@ -58,16 +57,16 @@ public class LenderListMyBatis {
         Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         Integer itemID = Integer.parseInt(requestParameters.get("itemId"));
-            this.item = itemDAO.findOne(itemID);
-            this.loadAllClients();
-            this.loadSelectedClients(itemID);
+        this.item = itemDAO.findOne(itemID);
+        this.loadAllClients();
+        this.loadSelectedClients(itemID);
     }
 
     private void loadAllClients() {
         this.allLenders = lenderMapper.selectAll();
     }
 
-    private void loadSelectedClients(Integer itemId){
+    private void loadSelectedClients(Integer itemId) {
         this.selectedLenders = lenderMapper.getSelectedLenders(itemId);
     }
 

@@ -5,7 +5,6 @@ import lombok.Setter;
 import entity.*;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -15,7 +14,6 @@ import java.util.Map;
 import repository.*;
 
 @Model
-@RequestScoped
 public class ItemsList {
 
     @Inject

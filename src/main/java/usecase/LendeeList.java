@@ -5,7 +5,6 @@ import lombok.Setter;
 import entity.Lendee;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -13,7 +12,6 @@ import java.util.List;
 import repository.*;
 
 @Model
-@RequestScoped
 public class LendeeList {
 
     @Inject
