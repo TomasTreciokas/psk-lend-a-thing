@@ -27,7 +27,6 @@ public class LenderListMyBatis {
     @Getter
     @Setter
     private ItemLender itemLender = new ItemLender();
-    ;
 
     @Getter
     @Setter
