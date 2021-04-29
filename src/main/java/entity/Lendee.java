@@ -23,5 +23,13 @@ public class Lendee {
 
     @OneToMany(mappedBy = "lendee")
     private List<Item> items = new ArrayList<>();
+
+    public Lendee(Integer id, String email) {
+        this.id = id;
+        this.email = email;
+    }
+
+    public Lendee(){
+    }
 }
 
